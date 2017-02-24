@@ -10662,3 +10662,1866 @@ Processing by JobsController#index as HTML
   Rendered jobs/index.html.erb within layouts/application (1.5ms)
 Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms)
   [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:27:18 UTC], ["updated_at", 2017-02-24 18:27:18 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 15:27:18 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 167ms (Views: 155.6ms | ActiveRecord: 0.1ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC], ["featured", false], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"1"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.3ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"", "location"=>"", "category"=>"", "description"=>"", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC], ["company_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["location", "São Paulo"], ["mail", "google@gmail.com.br"], ["phone", "4444-8888"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC], ["company_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "UX Senior"], ["category", "UX"], ["description", "UX com experiência em redes sociais"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:27:19 UTC], ["updated_at", 2017-02-24 18:27:19 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:27:19 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:28:12 UTC], ["updated_at", 2017-02-24 18:28:12 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:28:12 UTC], ["updated_at", 2017-02-24 18:28:12 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:29:51 UTC], ["updated_at", 2017-02-24 18:29:51 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:29:51 UTC], ["updated_at", 2017-02-24 18:29:51 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:29:51 -0300
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:30:33 UTC], ["updated_at", 2017-02-24 18:30:33 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:30:33 UTC], ["updated_at", 2017-02-24 18:30:33 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:30:33 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 17ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 136ms (Views: 124.5ms | ActiveRecord: 0.1ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC], ["featured", false], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"1"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"", "location"=>"", "category"=>"", "description"=>"", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 14ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC], ["company_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["location", "São Paulo"], ["mail", "google@gmail.com.br"], ["phone", "4444-8888"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 14ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC], ["company_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 15ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "UX Senior"], ["category", "UX"], ["description", "UX com experiência em redes sociais"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:36:56 UTC], ["updated_at", 2017-02-24 18:36:56 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:36:56 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:37:07 UTC], ["updated_at", 2017-02-24 18:37:07 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:37:07 UTC], ["updated_at", 2017-02-24 18:37:07 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:37:07 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 18ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:37:43 UTC], ["updated_at", 2017-02-24 18:37:43 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:37:43 UTC], ["updated_at", 2017-02-24 18:37:43 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:37:43 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering jobs/edit.html.erb within layouts/application
+  Rendered jobs/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 146ms (Views: 138.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:38:48 UTC], ["updated_at", 2017-02-24 18:38:48 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:38:48 UTC], ["updated_at", 2017-02-24 18:38:48 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:38:48 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering jobs/edit.html.erb within layouts/application
+  Rendered jobs/edit.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:41:06 UTC], ["updated_at", 2017-02-24 18:41:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:41:06 UTC], ["updated_at", 2017-02-24 18:41:06 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:41:06 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  Rendered jobs/edit.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:46:17 UTC], ["updated_at", 2017-02-24 18:46:17 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:46:17 UTC], ["updated_at", 2017-02-24 18:46:17 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:46:17 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 128ms (Views: 116.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:48:02 UTC], ["updated_at", 2017-02-24 18:48:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:48:02 UTC], ["updated_at", 2017-02-24 18:48:02 UTC], ["company_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:48:02 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 187ms (Views: 176.5ms | ActiveRecord: 0.2ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 15:48:02 -0300
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:53:02 UTC], ["updated_at", 2017-02-24 18:53:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:53:02 UTC], ["updated_at", 2017-02-24 18:53:02 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:53:02 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 158ms (Views: 147.3ms | ActiveRecord: 0.3ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 15:53:02 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Android", "location"=>"Belo Horizonte", "category"=>"Desenvolvedor Mobile", "company_id"=>"1", "description"=>"Desenvolvedor de apps integradas via API", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:53:51 UTC], ["updated_at", 2017-02-24 18:53:51 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:53:51 UTC], ["updated_at", 2017-02-24 18:53:51 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:53:51 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 155ms (Views: 144.7ms | ActiveRecord: 0.3ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 15:53:51 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Android", "location"=>"Belo Horizonte", "category"=>"Desenvolvedor Mobile", "company_id"=>"1", "description"=>"Desenvolvedor de apps integradas via API", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:54:36 UTC], ["updated_at", 2017-02-24 18:54:36 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:54:36 UTC], ["updated_at", 2017-02-24 18:54:36 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:54:36 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 154ms (Views: 142.1ms | ActiveRecord: 0.2ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 15:54:36 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Android", "location"=>"Belo Horizonte", "category"=>"Desenvolvedor Mobile", "company_id"=>"1", "description"=>"Desenvolvedor de apps integradas via API", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:54:51 UTC], ["updated_at", 2017-02-24 18:54:51 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:54:51 UTC], ["updated_at", 2017-02-24 18:54:51 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:54:51 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 183ms (Views: 171.8ms | ActiveRecord: 0.2ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 15:54:51 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Android", "location"=>"Belo Horizonte", "category"=>"Desenvolvedor Mobile", "company_id"=>"1", "description"=>"Desenvolvedor de apps integradas via API", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 18:58:06 UTC], ["updated_at", 2017-02-24 18:58:06 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 18:58:06 UTC], ["updated_at", 2017-02-24 18:58:06 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 15:58:06 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 158ms (Views: 147.6ms | ActiveRecord: 0.3ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 15:58:06 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Android", "location"=>"Belo Horizonte", "category"=>"Desenvolvedor Mobile", "company_id"=>"1", "description"=>"Desenvolvedor de apps integradas via API", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:01:12 UTC], ["updated_at", 2017-02-24 19:01:12 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:01:12 UTC], ["updated_at", 2017-02-24 19:01:12 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:01:12 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 192ms (Views: 181.1ms | ActiveRecord: 0.3ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:13 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Android", "location"=>"Belo Horizonte", "category"=>"Desenvolvedor Mobile", "company_id"=>"1", "description"=>"Desenvolvedor de apps integradas via API", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "jobs" SET "title" = ?, "location" = ?, "category" = ?, "description" = ?, "featured" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["title", "Dev Android"], ["location", "Belo Horizonte"], ["category", "Desenvolvedor Mobile"], ["description", "Desenvolvedor de apps integradas via API"], ["featured", false], ["updated_at", 2017-02-24 19:01:13 UTC], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:13 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:01:20 UTC], ["updated_at", 2017-02-24 19:01:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:01:20 UTC], ["updated_at", 2017-02-24 19:01:20 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:01:20 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 188ms (Views: 176.4ms | ActiveRecord: 0.3ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:20 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Android", "location"=>"Belo Horizonte", "category"=>"Desenvolvedor Mobile", "company_id"=>"1", "description"=>"Desenvolvedor de apps integradas via API", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "jobs" SET "title" = ?, "location" = ?, "category" = ?, "description" = ?, "featured" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["title", "Dev Android"], ["location", "Belo Horizonte"], ["category", "Desenvolvedor Mobile"], ["description", "Desenvolvedor de apps integradas via API"], ["featured", false], ["updated_at", 2017-02-24 19:01:20 UTC], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:20 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 134ms (Views: 123.4ms | ActiveRecord: 0.5ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC], ["featured", false], ["company_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"1"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"", "location"=>"", "category"=>"", "description"=>"", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Android", "location"=>"Belo Horizonte", "category"=>"Desenvolvedor Mobile", "company_id"=>"1", "description"=>"Desenvolvedor de apps integradas via API", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "jobs" SET "title" = ?, "location" = ?, "category" = ?, "description" = ?, "featured" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["title", "Dev Android"], ["location", "Belo Horizonte"], ["category", "Desenvolvedor Mobile"], ["description", "Desenvolvedor de apps integradas via API"], ["featured", false], ["updated_at", 2017-02-24 19:01:26 UTC], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC], ["company_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["location", "São Paulo"], ["mail", "google@gmail.com.br"], ["phone", "4444-8888"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Vaga de Dev", "location"=>"São Paulo", "category"=>"Desenvolvedor", "company_id"=>"2", "description"=>"Dev Junior Rails com ao menos um projeto", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "jobs" SET "company_id" = ?, "featured" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["company_id", 2], ["featured", false], ["updated_at", 2017-02-24 19:01:26 UTC], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.7ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"", "location"=>"São Paulo", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Dev Junior Rails com ao menos um projeto", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.3ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "UX Senior"], ["category", "UX"], ["description", "UX com experiência em redes sociais"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:01:26 UTC], ["updated_at", 2017-02-24 19:01:26 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:01:26 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:04:27 -0300
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:04:27 -0300
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:04:27 -0300
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:04:27 -0300
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["location", "São Paulo"], ["mail", "google@gmail.com.br"], ["phone", "4444-8888"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:04:27 -0300
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:04:27 -0300
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:04:27 -0300
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:04:27 -0300
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC], ["company_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:04:27 -0300
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "UX Senior"], ["category", "UX"], ["description", "UX com experiência em redes sociais"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:04:27 UTC], ["updated_at", 2017-02-24 19:04:27 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:04:27 -0300
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:04:27 -0300
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:12 UTC], ["updated_at", 2017-02-24 19:05:12 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:05:12 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 130ms (Views: 117.7ms | ActiveRecord: 0.1ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC], ["featured", false], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"1"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"", "location"=>"", "category"=>"", "description"=>"", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC], ["company_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Android", "location"=>"Belo Horizonte", "category"=>"Desenvolvedor Mobile", "company_id"=>"1", "description"=>"Desenvolvedor de apps integradas via API", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "jobs" SET "title" = ?, "location" = ?, "category" = ?, "description" = ?, "featured" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["title", "Dev Android"], ["location", "Belo Horizonte"], ["category", "Desenvolvedor Mobile"], ["description", "Desenvolvedor de apps integradas via API"], ["featured", false], ["updated_at", 2017-02-24 19:05:13 UTC], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC], ["company_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["location", "São Paulo"], ["mail", "google@gmail.com.br"], ["phone", "4444-8888"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.3ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Vaga de Dev", "location"=>"São Paulo", "category"=>"Desenvolvedor", "company_id"=>"2", "description"=>"Dev Junior Rails com ao menos um projeto", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "jobs" SET "company_id" = ?, "featured" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["company_id", 2], ["featured", false], ["updated_at", 2017-02-24 19:05:13 UTC], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.8ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"", "location"=>"São Paulo", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Dev Junior Rails com ao menos um projeto", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.5ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "UX Senior"], ["category", "UX"], ["description", "UX com experiência em redes sociais"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:13 UTC], ["updated_at", 2017-02-24 19:05:13 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:05:13 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:58 UTC], ["updated_at", 2017-02-24 19:05:58 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 129ms (Views: 118.3ms | ActiveRecord: 0.1ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 19:05:58 UTC], ["updated_at", 2017-02-24 19:05:58 UTC], ["featured", false], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:58 UTC], ["updated_at", 2017-02-24 19:05:58 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"1"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 19:05:58 UTC], ["updated_at", 2017-02-24 19:05:58 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"", "location"=>"", "category"=>"", "description"=>"", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:58 UTC], ["updated_at", 2017-02-24 19:05:58 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:58 UTC], ["updated_at", 2017-02-24 19:05:58 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Android", "location"=>"Belo Horizonte", "category"=>"Desenvolvedor Mobile", "company_id"=>"1", "description"=>"Desenvolvedor de apps integradas via API", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "jobs" SET "title" = ?, "location" = ?, "category" = ?, "description" = ?, "featured" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["title", "Dev Android"], ["location", "Belo Horizonte"], ["category", "Desenvolvedor Mobile"], ["description", "Desenvolvedor de apps integradas via API"], ["featured", false], ["updated_at", 2017-02-24 19:05:58 UTC], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:58 UTC], ["updated_at", 2017-02-24 19:05:58 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:58 UTC], ["updated_at", 2017-02-24 19:05:58 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["location", "São Paulo"], ["mail", "google@gmail.com.br"], ["phone", "4444-8888"], ["created_at", 2017-02-24 19:05:58 UTC], ["updated_at", 2017-02-24 19:05:58 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:05:58 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:59 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Vaga de Dev", "location"=>"São Paulo", "category"=>"Desenvolvedor", "company_id"=>"2", "description"=>"Dev Junior Rails com ao menos um projeto", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "jobs" SET "company_id" = ?, "featured" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["company_id", 2], ["featured", false], ["updated_at", 2017-02-24 19:05:59 UTC], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:59 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:59 UTC], ["updated_at", 2017-02-24 19:05:59 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:59 UTC], ["updated_at", 2017-02-24 19:05:59 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:05:59 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:59 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"", "location"=>"São Paulo", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Dev Junior Rails com ao menos um projeto", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:59 UTC], ["updated_at", 2017-02-24 19:05:59 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:59 UTC], ["updated_at", 2017-02-24 19:05:59 UTC], ["company_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:05:59 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.3ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:59 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:59 UTC], ["updated_at", 2017-02-24 19:05:59 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:59 UTC], ["updated_at", 2017-02-24 19:05:59 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:05:59 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:05:59 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:59 UTC], ["updated_at", 2017-02-24 19:05:59 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:59 UTC], ["updated_at", 2017-02-24 19:05:59 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:05:59 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:05:59 UTC], ["updated_at", 2017-02-24 19:05:59 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:59 UTC], ["updated_at", 2017-02-24 19:05:59 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "UX Senior"], ["category", "UX"], ["description", "UX com experiência em redes sociais"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:05:59 UTC], ["updated_at", 2017-02-24 19:05:59 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:05:59 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:05:59 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 136ms (Views: 125.1ms | ActiveRecord: 0.7ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC], ["featured", false], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Master", "location"=>"Rio de Janeiro", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Vaga para Dev Master para Bootcamp Rails", "featured"=>"1"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dev Master"], ["category", "Desenvolvedor"], ["description", "Vaga para Dev Master para Bootcamp Rails"], ["location", "Rio de Janeiro"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+Started POST "/jobs" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"", "location"=>"", "category"=>"", "description"=>"", "featured"=>"0"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Dev Android", "location"=>"Belo Horizonte", "category"=>"Desenvolvedor Mobile", "company_id"=>"1", "description"=>"Desenvolvedor de apps integradas via API", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "jobs" SET "title" = ?, "location" = ?, "category" = ?, "description" = ?, "featured" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["title", "Dev Android"], ["location", "Belo Horizonte"], ["category", "Desenvolvedor Mobile"], ["description", "Desenvolvedor de apps integradas via API"], ["featured", false], ["updated_at", 2017-02-24 19:07:10 UTC], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["location", "São Paulo"], ["mail", "google@gmail.com.br"], ["phone", "4444-8888"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.6ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"Vaga de Dev", "location"=>"São Paulo", "category"=>"Desenvolvedor", "company_id"=>"2", "description"=>"Dev Junior Rails com ao menos um projeto", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "jobs" SET "company_id" = ?, "featured" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["company_id", 2], ["featured", false], ["updated_at", 2017-02-24 19:07:10 UTC], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.3ms)
+Started PATCH "/jobs/1" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "job"=>{"title"=>"", "location"=>"São Paulo", "category"=>"Desenvolvedor", "company_id"=>"1", "description"=>"Dev Junior Rails com ao menos um projeto", "featured"=>"0"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering jobs/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 13ms (Views: 5.6ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.3ms)
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Campus Code"], ["location", "São Paulo"], ["mail", "contato@campus.com.br"], ["phone", "2369-3476"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vaga de Dev"], ["category", "Desenvolvedor"], ["description", "Dev Junior Rails com ao menos um projeto"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC], ["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "UX Senior"], ["category", "UX"], ["description", "UX com experiência em redes sociais"], ["location", "São Paulo"], ["created_at", 2017-02-24 19:07:10 UTC], ["updated_at", 2017-02-24 19:07:10 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-02-24 16:07:10 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
