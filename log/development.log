@@ -2225,3 +2225,132 @@ app/views/jobs/index.html.erb:2:in `_app_views_jobs_index_html_erb__120886596288
             FROM sqlite_temp_master
             WHERE name='index_jobs_on_company_id' AND type='index'
 [0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (336.0ms)[0m  [1m[35mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "mail" varchar, "phone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (305.4ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "category" varchar, "description" varchar, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "featured" boolean, "company_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (371.5ms)[0m  [1m[35mCREATE  INDEX "index_jobs_on_company_id" ON "jobs" ("company_id")[0m
+  [1m[35m (295.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (353.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170222142839')[0m
+  [1m[35m (330.5ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('20170222141803'),
+('20170222135950'),
+('20170219194135'),
+('20170221171315');
+
+[0m
+  [1m[35m (286.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-25 15:38:56 UTC], ["updated_at", 2017-02-25 15:38:56 UTC]]
+  [1m[35m (297.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (324.8ms)[0m  [1m[35mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "mail" varchar, "phone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (316.8ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "category" varchar, "description" varchar, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "featured" boolean, "company_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (348.8ms)[0m  [1m[35mCREATE  INDEX "index_jobs_on_company_id" ON "jobs" ("company_id")[0m
+  [1m[35m (338.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (293.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170222142839')[0m
+  [1m[35m (320.1ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('20170222141803'),
+('20170222135950'),
+('20170219194135'),
+('20170221171315');
+
+[0m
+  [1m[35m (340.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-25 15:38:59 UTC], ["updated_at", 2017-02-25 15:38:59 UTC]]
+  [1m[35m (380.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+Started GET "/" for 127.0.0.1 at 2017-02-25 12:41:53 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 474ms (Views: 389.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2017-02-25 12:42:11 -0300
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (122.9ms)
+Completed 200 OK in 299ms (Views: 196.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/companies" for 127.0.0.1 at 2017-02-25 12:42:53 -0300
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oCpu7BEJ92cqx3jzLQFE6sK8jc6y3p82GUBifsB1mZkJjrm6S+xIhDa8G1PO8T1bjpdd29KE4qllplCi9W8HqQ==", "company"=>{"name"=>"Google", "location"=>"SP", "mail"=>"google@gmail.com", "phone"=>"91150136510"}, "commit"=>"Criar Empresa"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "location", "mail", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["location", "SP"], ["mail", "google@gmail.com"], ["phone", "91150136510"], ["created_at", 2017-02-25 15:42:53 UTC], ["updated_at", 2017-02-25 15:42:53 UTC]]
+  [1m[35m (278.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/companies/1
+Completed 302 Found in 284ms (ActiveRecord: 278.6ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-02-25 12:42:53 -0300
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 68ms (Views: 34.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2017-02-25 12:43:10 -0300
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered jobs/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 57ms (Views: 30.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/jobs" for 127.0.0.1 at 2017-02-25 12:44:04 -0300
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n4xI/pvHypLsFCb9eefPkU+h5tj1VO+cEUk32ti6Gts2KJ+owSJ1cfBvRV2aF7YgA4o2zZUOkgNtrwUG7aCE6w==", "job"=>{"title"=>"Analista", "location"=>"SP", "category"=>"Senior", "company_id"=>"1", "description"=>"Analista de sistemas", "featured"=>"1"}, "commit"=>"Criar Vaga"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "category", "description", "location", "created_at", "updated_at", "featured", "company_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Analista"], ["category", "Senior"], ["description", "Analista de sistemas"], ["location", "SP"], ["created_at", 2017-02-25 15:44:04 UTC], ["updated_at", 2017-02-25 15:44:04 UTC], ["featured", true], ["company_id", 1]]
+  [1m[35m (261.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 374ms (ActiveRecord: 263.0ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2017-02-25 12:44:05 -0300
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 32ms (Views: 18.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-25 12:44:08 -0300
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered jobs/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.6ms)
+
+
