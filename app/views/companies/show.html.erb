@@ -1,0 +1,15 @@
+<h1> <%= @company.name %> </h1>
+<%= @company.location %>
+<%= @company.mail %>
+<%= @company.phone %>
+
+<h2>VAGAS</H2>
+
+<% @company.jobs.each do |job| %>
+  <%= job.title %>
+  <%= job.category %>
+<% end %>
+
+<% if @company.jobs.empty? %>
+  Nenhuma vaga disponível
+  <% end %>

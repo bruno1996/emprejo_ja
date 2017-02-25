@@ -1,0 +1,17 @@
+Emprego Já
+<% @jobs.each do |job| %>
+  <h1>  <%= link_to job.title, job_path(job) %> </h1>
+  : <%= job.location %>
+  : <%= job.company.name %>
+
+  <% if job.featured == true %>
+     <strong>Destaque</strong>
+  <% end %>
+<%end%>
+<br>
+<%= link_to 'Nova Compania', new_company_path %>
+<br>
+<% @companies.each do |company| %>
+  <%= link_to company.name , company_path(company) %>
+
+<% end %>
