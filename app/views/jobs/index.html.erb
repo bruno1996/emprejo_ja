@@ -9,9 +9,11 @@ Emprego Já
   <% end %>
 <%end%>
 <br>
+
 <%= link_to 'Nova Compania', new_company_path %>
+
 <br>
+
 <% @companies.each do |company| %>
   <%= link_to company.name , company_path(company) %>
-
 <% end %>

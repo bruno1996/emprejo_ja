@@ -2,6 +2,7 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all
     @companies = Company.all
+    @categories = Category.all
   end
   def show
     @job = Job.find(params[:id])
@@ -9,8 +10,10 @@ class JobsController < ApplicationController
   def new
     @job = Job.new
     @companies =  Company.all
+    @categories = Category.all
   end
   def create
+    @categories = Category.all
     @companies =  Company.all
     @job = Job.new(job_params)
     if  @job.save
@@ -23,8 +26,10 @@ class JobsController < ApplicationController
   def edit
     @job = Job.find(params[:id])
     @companies = Company.all
+    @categories = Category.all
   end
   def update
+    @categories = Category.all
     @companies = Company.all
     @job = Job.find(params[:id])
     if @job.update(job_params)
@@ -38,6 +43,6 @@ class JobsController < ApplicationController
 private
 
   def job_params
-  params.require(:job).permit(:title,:location,:category,:company_id,:description,:featured)
+  params.require(:job).permit(:title,:location,:category_id,:company_id,:description,:featured)
   end
 end
